@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Book Manager</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            margin: 30px 0 10px;
+            font-weight: 500;
+            color: #444;
+        }
+
+        /* Form */
+        #addForm {
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        #addForm input {
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.2s ease;
+        }
+
+        #addForm input:focus {
+            border-color: #4f46e5;
+        }
+
+        #addForm button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        #addForm button:hover {
+            background: #3730a3;
+        }
+
+        /* Contacts list */
+        #contactsList {
+            list-style: none;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        #contactsList li {
+            background: white;
+            padding: 14px 18px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        #contactsList li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Buttons inside list */
+        #contactsList button {
+            margin-left: 8px;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #contactsList button:nth-child(2) {
+            background: #ef4444;
+            color: white;
+        }
+
+        #contactsList button:nth-child(2):hover {
+            background: #b91c1c;
+        }
+
+        #contactsList button:nth-child(3) {
+            background: #22c55e;
+            color: white;
+        }
+
+        #contactsList button:nth-child(3):hover {
+            background: #15803d;
+        }
+
+        #contactsList button:first-of-type {
+            margin-left: auto !important;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contact Book Manager</h1>
+    <form id="addForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="phone" placeholder="Phone" required>
+        <button type="submit">Add Contact</button>
+    </form>
+    <h2>Contacts List</h2>
+    <ul id="contactsList"></ul>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
