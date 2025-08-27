@@ -33,6 +33,11 @@ router.get('/:id', (req, res) => {
 // POST /contacts
 router.post('/', (req, res) => {
     const contacts = readContacts();
+    if (!(req.body.name && req.body.phone)) {
+        res.status(400).send("Missing parameters!");
+        return;
+    }
+
     const newContact = {
         id: contacts.length ? contacts[contacts.length - 1].id + 1 : 1,
         name: req.body.name,
@@ -41,6 +46,7 @@ router.post('/', (req, res) => {
     contacts.push(newContact);
     writeContacts(contacts);
     res.status(201).json(newContact);
+
 });
 
 // PUT /contacts/:id
@@ -65,7 +71,7 @@ router.delete('/:id', (req, res) => {
     }
 
     writeContacts(contacts);
-    res.send("Contact deleted");
+    res.status(204).end();
 })
 
 module.exports = router;

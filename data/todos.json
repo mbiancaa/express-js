@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "task": "Learn Express",
+    "done": false
+  },
+  {
+    "id": 2,
+    "task": "Build Node.js & Express App",
+    "done": true
+  },
+  {
+    "id": 1756315333859,
+    "task": "Task nou in json",
+    "done": true
+  },
+  {
+    "id": 1756315807773,
+    "task": "Noul task creat chiar acum in Postman",
+    "done": false
+  },
+  {
+    "id": 1756315846143,
+    "task": "Noul task creat chiar acum in Postman 2",
+    "done": false
+  }
+]
